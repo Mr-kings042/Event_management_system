@@ -28,15 +28,17 @@ Before you begin, make sure you have:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/event-management-api.git
-cd event_management_system
+git clone https://github.com/Mr-kings042/Event_management_system.git
+cd Event_management_system
 ```
 
-### step 2: Create a Virtual Environment
+### Step 2: Create a Virtual Environment
 ```bash
 python -m venv venv
+
 (for mac/linux)
 source venv/bin/activate
+
 (for windows)
 venv\Scripts\activate
 ```
@@ -126,4 +128,8 @@ You can Test the endpoints using:
 ├── database.py
 └── README.md
 └── Requirement.txt
+
+# MIT License
+
+Copyright (c) 2025 Okoh Kingsley
 
