@@ -16,7 +16,7 @@ class RegisterCrud:
                  raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="User is not active")
         
            if any(reg.user_id == registration.user_id and reg.event_id == registration.event_id for reg in registrations.values()):
-                 raise HTTPException(status_code=status.HTTP_409_CONFLICT_BAD_REQUEST,  detail="User already registered for this event")
+                 raise HTTPException(status_code=status.HTTP_409_CONFLICT,  detail="User already registered for this event")
            #event must be open for registration
            if any(event.id == registration.event_id and not event.is_open  for event in events.values()):
                  raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Event is not open for registration")

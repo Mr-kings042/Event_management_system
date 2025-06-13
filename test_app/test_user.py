@@ -6,8 +6,8 @@ client = TestClient(app)
 
 def test_create_user():
     data = {
-        "name": "John Doe",
-        "email": "john.doe@example.com"
+        "name": "John king",
+        "email": "king.doe@example.com"
     }
     response = client.post("/user",data=data)
     assert response.status_code == 201
@@ -24,9 +24,10 @@ def test_create_user_conflict():
     assert response.status_code == 409
     data = response.json()
     assert data["detail"] == "Username already exists"
+
 def test_create_user_email_conflict():
     data = {
-        "name": "Jane Doe",
+        "name": "Jane ada",
         "email": "john.doe@example.com"
     }
     response = client.post("/user",data=data)

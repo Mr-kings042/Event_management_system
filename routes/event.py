@@ -6,7 +6,7 @@ from services.event import event_service
 
 event_router = APIRouter()
 
-@event_router.post("/", status_code=status.HTTP_201_CREATED)
+@event_router.post("", status_code=status.HTTP_201_CREATED)
 def create_event(event_data: EventCreate = Form(...)):
     return event_crud.create_event(event_data)
 
