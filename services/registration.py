@@ -16,7 +16,8 @@ class RegisterService:
                     break
             if not registration:
                 raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User Registration not found for this event")
-            
+            if registration.attended == True:
+                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Attendance already marked for this user for this event")
             registration.attended = True
 
             return {"message": "Attendance marked for the user", "Registration": registrations[user_id]}  
